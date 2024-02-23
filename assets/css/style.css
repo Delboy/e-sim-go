@@ -232,7 +232,7 @@ header a:hover,
   height: 30vh;
   padding: 2rem 6rem;
 
-  background-image: url("/assets/images/capitol.jpg");
+  background-image: url(../assets/images/capitol.jpg);
   background-position: center;
   background-size: cover;
   border-bottom-right-radius: 10rem;
@@ -442,6 +442,7 @@ footer {
 /********** Media Queries **********/
 
 @media (max-width: 1100px) {
+
   /********** Nav **********/
 
   header {
@@ -615,8 +616,12 @@ footer {
 }
 
 @media (max-width: 600px) {
+
+  /********** Hero **********/
   .hero-image {
     font-size: 0.9rem;
+    height: 50vh;
+    padding: 2rem 0;
   }
 
   .bundle-footer h2 {
@@ -631,11 +636,12 @@ footer {
 
   /********** Footer **********/
 
+  
   .footer-main {
-    display: block;
-  }
-
-  .footer-column {
+      display: block;
+    }
+    
+    .footer-column {
     padding-top: 1rem;
   }
 
