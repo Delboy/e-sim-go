@@ -276,6 +276,7 @@ header a:hover,
 
 .button {
   height: 3rem;
+  width: 12rem;
   padding: 0 2rem;
 
   border: none;

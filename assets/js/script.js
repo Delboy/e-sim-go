@@ -25,6 +25,11 @@ bundles.forEach(bundle => {
         clearSelectedBundle();
         
         bundle.setAttribute('data-selected', 'true')
+        const size = bundle.getAttribute('data-size')
+        const price = bundle.getAttribute('data-price')
+        const period = bundle.getAttribute('data-period')
+        
+        setFooterValues(size, price, period)
     })
 })
 
@@ -32,4 +37,15 @@ const clearSelectedBundle = () => {
     bundles.forEach(bundle => {
         bundle.setAttribute('data-selected', 'false')
     })
+}
+
+// Send Selected bundle info to bundle footer
+const setFooterValues = (size, price, period) => {
+     const footerSize = document.querySelector('.footer-size')
+     const footerPrice = document.querySelector('.footer-cost')
+     const footerPeriod = document.querySelector('.footer-period')
+
+    footerSize.textContent = size + "GB";
+    footerPrice.textContent = price;
+    footerPeriod.textContent = period + " Day Bundle"
 }
