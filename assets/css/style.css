@@ -1,7 +1,7 @@
-/* imports */
+/********** Imports **********/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/* defaults */
+/********** Defaults **********/
 
 *,
 *::before,
@@ -25,7 +25,6 @@ h1 {
 }
 
 body {
-  background-color: var(--off-white);
   font-family: "Poppins", sans-serif;
 }
 
@@ -39,14 +38,62 @@ li {
   list-style: none;
 }
 
-/* Layout */
+/********** Layout **********/
+
+.d-flex {
+  display: flex;
+}
+
+.j-c-c {
+  justify-content: center;
+}
+
+.j-c-sb {
+  justify-content: space-between;
+}
+
+.a-i-c {
+  align-items: center;
+}
+
+.gap1 {
+  gap: 1rem;
+}
+
 .container {
   margin: auto;
   width: 100%;
   max-width: 1200px;
+  padding: 0 1rem;
 }
 
-/* Hidden elements */
+/********** Paddings & Margins **********/
+
+.p1 {
+  padding: 1rem;
+}
+
+.mt1 {
+  margin-top: 1rem;
+}
+
+/********** Colours **********/
+
+.blue-text {
+  color: var(--blue);
+}
+
+.grey-bg {
+  background-color: var(--off-white);
+}
+
+/********** Fonts **********/
+
+.bold {
+  font-weight: 600;
+}
+
+/********** Hidden elements **********/
 
 .hamburger,
 .mobile-nav,
@@ -55,18 +102,16 @@ li {
   display: none;
 }
 
-/* misc */
+/********** Misc **********/
 
 .logo a {
-  display: flex;
-  align-items: center;
   gap: 1rem;
   font-size: 1.5rem;
   width: fit-content;
 }
 
 .logo a:hover {
-    color: inherit;
+  color: inherit;
 }
 
 .chevron {
@@ -77,7 +122,8 @@ li {
   border-top: 6px solid var(--off-white);
 }
 
-/* Header */
+/********** Header *********/
+
 header {
   position: fixed;
   width: 100%;
@@ -91,17 +137,15 @@ header a:hover,
 }
 
 .wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
   max-width: 1400px;
   margin: auto;
   padding: 2rem;
 }
 
+/********** Nav *********/
+
 .main-nav ul {
-  display: flex;
   gap: 1.5rem;
 }
 
@@ -115,17 +159,12 @@ header a:hover,
 }
 
 .dropdown-select {
-  display: flex;
   gap: 0.7rem;
-  align-items: center;
 }
 
-/* Hero Section */
-.hero-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/********** Hero Section **********/
 
+.hero-image {
   height: 30vh;
   padding: 2rem 6rem;
 
@@ -140,10 +179,68 @@ header a:hover,
   text-align: center;
 }
 
+/********** Bundles **********/
+
+.bundles {
+  padding: 2rem;
+  z-index: 1;
+}
+
+.bundle-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid var(--blue);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 12rem;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.bundle-card p:not(:last-child) {
+  font-size: 1.5rem;
+}
+
+.bundle-card i {
+  padding-right: 0.5rem;
+  color: var(--blue);
+}
+
+.recommended::after {
+  content: "Recommended";
+  position: absolute;
+  top: -1.2rem;
+  left: -1px; /* Move left one pixel to account for border width */
+
+  width: calc(
+    100% + 2px
+  ); /* Full width plus 1px each side to account for border width */
+  height: 2rem;
+  padding-top: 0.1rem;
+
+  color: white;
+  font-size: 0.7rem;
+  background-color: var(--blue);
+  border-radius: 0.5rem;
+  z-index: -1;
+}
+
+/********** Media Queries **********/
+
 @media (max-width: 1100px) {
-    .main-nav, .exit, .hamburger, .mobile-nav, .mobile-nav ul {
-        display: flex;
-    }
+
+  /********** Nav **********/
+
+  .main-nav,
+  .exit,
+  .hamburger,
+  .mobile-nav,
+  .mobile-nav ul {
+    display: flex;
+  }
 
   .main-nav {
     position: fixed;
@@ -208,10 +305,30 @@ header a:hover,
     font-size: 1.4rem;
     font-weight: 600;
   }
+
+/********** Bundles **********/
+
+.bundles {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0 2rem;
+}
+
+.recommended {
+    margin-top: 1rem;
+}
+
+.bundle-card {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 }
 
 @media (max-width: 600px) {
-    .hero-image {
-        font-size: .9rem;
-    }
+  .hero-image {
+    font-size: 0.9rem;
+  }
 }
