@@ -107,7 +107,7 @@ li {
 }
 
 .white-bg {
-    background-color: white !important;
+  background-color: white !important;
 }
 
 /********** Fonts **********/
@@ -128,7 +128,6 @@ li {
 
 .hamburger,
 .mobile-nav,
-.dropdown .dropdown-menu,
 .exit {
   display: none;
 }
@@ -151,6 +150,10 @@ li {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 6px solid var(--off-white);
+
+  transform: rotate(0deg);
+  transition: 500ms transform ease;
+
 }
 
 /********** Header *********/
@@ -188,11 +191,40 @@ header a:hover,
 
 .dropdown {
   cursor: pointer;
+  position: relative;
 }
 
 .dropdown-select {
   gap: 0.7rem;
 }
+
+.dropdown[data-open="true"] .dropdown-menu {
+  display: block;
+  position: absolute;
+  left: -1.5rem;
+  color: white;
+  width: calc(100% + 3rem);
+  padding: 1rem;
+  border-bottom: 1px solid white;
+}
+
+.dropdown[data-open="true"] .dropdown-menu li {
+  border-right: none;
+}
+
+.dropdown[data-open="true"] .dropdown-menu li:hover {
+  color: lightgray;
+}
+
+.dropdown[data-open="true"] .chevron {
+    transform: rotate(-180deg);
+    transition: 500ms transform ease;
+}
+
+.dropdown[data-open="false"] .dropdown-menu {
+  display: none;
+}
+
 
 /********** Hero Section **********/
 
@@ -276,12 +308,11 @@ header a:hover,
   background-color: white;
   margin-bottom: 3rem;
   box-shadow: 0 0 5px gray;
-
 }
 
 .absolute {
-    position: relative !important;
-    margin-bottom: 0;
+  position: relative !important;
+  margin-bottom: 0;
 }
 
 .button {
@@ -328,7 +359,6 @@ header a:hover,
   max-height: 0;
   opacity: 0;
   padding: 0;
-  
 }
 
 .question[data-open="true"] .answer {
@@ -362,11 +392,10 @@ header a:hover,
 }
 
 .answer {
-    max-height: 50rem;
+  max-height: 50rem;
   padding: 1rem;
   width: 100%;
   transition: max-height 500ms ease;
-
 }
 
 /********** Footer **********/
@@ -425,7 +454,7 @@ footer {
     border-bottom: 1px solid lightgrey;
 
     transition: all 300ms ease;
-}
+  }
 
   .main-nav,
   .exit,
@@ -475,6 +504,24 @@ footer {
     gap: 1rem;
     cursor: pointer;
     font-size: 1.2rem;
+  }
+
+  .dropdown[data-open="true"] {
+    height: 13rem;
+  }
+
+  .dropdown[data-open="true"] .dropdown-menu {
+    border: none;
+    padding-left: 2rem;
+  }
+
+  .dropdown[data-open="true"] .currency-option,
+  .dropdown[data-open="true"] .language {
+    border: none;
+  }
+
+  .dropdown[data-open="true"] + .languages {
+    height: 12rem;
   }
 
   .hamburger {
