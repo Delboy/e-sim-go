@@ -1,3 +1,19 @@
+// Change Background of Header when scrolling
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header')
+    const scroll = window.scrollY;
+
+    if(scroll > 100){
+        header.classList.add('scrolled')
+    } 
+
+    if(scroll < 100){
+        header.classList.remove('scrolled')
+    }
+
+})
+
+
 // Toggles Side Nav
 const hamburger = document.querySelector(".hamburger");
 const exit = document.querySelector(".exit");
