@@ -232,7 +232,7 @@ header a:hover,
   height: 30vh;
   padding: 2rem 6rem;
 
-  background-image: url(../assets/images/capitol.jpg);
+  background: url(../images/capitol.jpg);
   background-position: center;
   background-size: cover;
   border-bottom-right-radius: 10rem;
