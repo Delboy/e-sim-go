@@ -62,6 +62,14 @@ li {
   align-items: center;
 }
 
+.flex-col {
+    flex-direction: column;
+}
+
+.text-center {
+    text-align: center;
+}
+
 .gap1 {
   gap: 1rem;
 }
@@ -264,6 +272,28 @@ header a:hover,
     letter-spacing: -3px;
 }
 
+/********** FAQs **********/
+
+.question {
+    border: 1px solid;
+    border-color: transparent;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.question div {
+    border: 1px solid;
+    border-color: lightgrey;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+.answer {
+    padding: 1rem;
+}
+
 /********** Media Queries **********/
 
 @media (max-width: 1100px) {
@@ -355,7 +385,18 @@ header a:hover,
     flex-direction: row;
     justify-content: space-between;
   }
+
+  /********** FAQ's **********/
+    .questions {
+        flex-direction: column;
+        padding-top: 1rem;
+    }
+
+    .column {
+        padding: 0;
+    }
 }
+
 
 @media (max-width: 600px) {
   .hero-image {
