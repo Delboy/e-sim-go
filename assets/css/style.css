@@ -22,7 +22,7 @@ h1 {
   --off-white: rgba(250, 250, 250, 255);
   --hover-white: rgb(221, 221, 221);
   --blue: rgb(0, 137, 203, 255);
-  --light-blue: rgba(242,249,252,255);
+  --light-blue: rgba(242, 249, 252, 255);
   --default-gradient: rgb(101, 152, 196);
   --gradient: linear-gradient(
     135deg,
@@ -228,12 +228,12 @@ header a:hover,
   cursor: pointer;
 }
 
-.bundle-card[data-selected='true']{
-    background-color: var(--light-blue);
+.bundle-card[data-selected="true"] {
+  background-color: var(--light-blue);
 }
 
 .bundle-card:hover {
-    background-color: var(--light-blue);
+  background-color: var(--light-blue);
 }
 
 .bundle-card p:not(:last-child) {
@@ -296,11 +296,46 @@ header a:hover,
 
 /********** FAQs **********/
 
+.column {
+  width: 50%;
+}
+
 .question {
   border: 1px solid;
   border-color: transparent;
   border-radius: 1rem;
   margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.question i {
+  transition: 300ms transform ease;
+}
+
+.question[data-open="false"] .answer {
+  height: 0;
+  opacity: 0;
+  padding: 0;
+}
+
+.question[data-open="true"] .answer {
+  display: block;
+  height: 100%;
+
+  transition: height 1s ease;
+}
+
+.question[data-open="true"] {
+  border: 1px solid lightgrey;
+}
+
+.question[data-open="true"] div {
+  border-color: transparent;
+}
+
+.question[data-open="true"] i {
+  transform: rotate(180deg);
+  transition: 300ms transform ease;
 }
 
 .question div {
@@ -314,6 +349,7 @@ header a:hover,
 
 .answer {
   padding: 1rem;
+  width: 100%;
 }
 
 /********** Footer **********/
@@ -331,7 +367,7 @@ footer {
 }
 
 .footer li:hover {
-    color: rgb(212, 212, 212);
+  color: rgb(212, 212, 212);
 }
 
 .footer-column {
@@ -353,9 +389,9 @@ footer {
 }
 
 .footer-footer li:not(:last-child) {
-    border-right: 1px solid lightgray;
-    padding-right: 1rem;
-  }
+  border-right: 1px solid lightgray;
+  padding-right: 1rem;
+}
 
 /********** Media Queries **********/
 
@@ -385,16 +421,14 @@ footer {
     letter-spacing: 1px;
 
     transition: all 300ms cubic-bezier(0.645, 0.0045, 0.355, 1);
-}
+  }
 
-.main-nav[data-open="true"]{
+  .main-nav[data-open="true"] {
     transform: translateX(0);
-    
-}
+  }
 
-.main-nav[data-open="false"]{
-      transform: translateX(-100%);
-
+  .main-nav[data-open="false"] {
+    transform: translateX(-100%);
   }
 
   .main-nav ul {
@@ -477,6 +511,7 @@ footer {
   }
 
   .column {
+    width: 100%;
     padding: 0;
   }
 
@@ -524,5 +559,4 @@ footer {
     padding: 1rem 0;
     height: fit-content;
   }
-
 }

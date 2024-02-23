@@ -49,3 +49,19 @@ const setFooterValues = (size, price, period) => {
     footerPrice.textContent = price;
     footerPeriod.textContent = period + " Day Bundle"
 }
+
+
+// Open FAQ question dropdown 
+const questions = document.querySelectorAll('.question');
+
+questions.forEach(question => {
+    question.addEventListener('click', () => {
+        const openStatus = question.getAttribute('data-open');
+        if(openStatus === 'true'){
+            question.setAttribute('data-open', 'false')
+        } else {
+            question.setAttribute('data-open', 'true')
+        }
+
+    })
+})
