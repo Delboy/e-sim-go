@@ -196,7 +196,7 @@ header a:hover,
   height: 30vh;
   padding: 2rem 6rem;
 
-  background-image: url(/assets/images/capitol.jpg);
+  background-image: url("/assets/images/capitol.jpg");
   background-position: center;
   background-size: cover;
   border-bottom-right-radius: 10rem;
@@ -306,6 +306,8 @@ header a:hover,
   border-radius: 1rem;
   margin-bottom: 1rem;
   cursor: pointer;
+
+  overflow: hidden;
 }
 
 .question i {
@@ -313,16 +315,18 @@ header a:hover,
 }
 
 .question[data-open="false"] .answer {
-  height: 0;
+  max-height: 0;
   opacity: 0;
   padding: 0;
+  
 }
 
 .question[data-open="true"] .answer {
   display: block;
-  height: 100%;
-
-  transition: height 1s ease;
+  max-height: 50rem;
+  opacity: 1;
+  transition-property: opacity;
+  transition-delay: 100ms;
 }
 
 .question[data-open="true"] {
@@ -335,7 +339,7 @@ header a:hover,
 
 .question[data-open="true"] i {
   transform: rotate(180deg);
-  transition: 300ms transform ease;
+  transition: 500ms transform ease;
 }
 
 .question div {
@@ -348,8 +352,11 @@ header a:hover,
 }
 
 .answer {
+    max-height: 50rem;
   padding: 1rem;
   width: 100%;
+  transition: max-height 500ms ease;
+
 }
 
 /********** Footer **********/
