@@ -12,7 +12,7 @@ window.addEventListener("scroll", () => {
   const footerHeightString = footerHeight.toString() + 'px';
   
   const windowHeight = window.innerHeight;
-
+  
   const body = document.body,
     html = document.documentElement;
 
@@ -35,11 +35,11 @@ window.addEventListener("scroll", () => {
     bundleFooter.style.bottom = "3rem";
   }
 
-  if (scroll > 100) {
+  if (scroll > 80) {
     header.classList.add("scrolled");
   }
 
-  if (scroll < 100) {
+  if (scroll < 80) {
     header.classList.remove("scrolled");
   }
 });
