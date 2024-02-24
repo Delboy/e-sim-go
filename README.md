@@ -10,8 +10,12 @@ A more detailed article of how to clone repos can be found [here](https://docs.g
 
 ### Step Two
 
-In VScode download the extension 'Live Server'.
+In VScode navigate to the extensions tab on the side nav and download the extension called 'Live Server'.
 
 ### Step Three 
 
 After installing the Live Server extension, hit the button labelled 'Go Live' located in the footer of VsCode. This will open the project in a local server and will automatically open a window displaying the project.
+
+# Design Choices
+
+I was originally going to code the page using the React library, as I prefer writing reusable components and I enjoy the simplicity of using states to get functions working. But on reflection I decided that for just a single page React was a bit overkill and bloated for my needs. So I went back to basics and kept things minimal. I avoided using any frameworks like bootstrap or Materialize for the frontend and I kept the Javascript vanilla. Although this meant I would have to do slightly more work to get things working I felt it was all good practice and a better showcase of my skills. 
