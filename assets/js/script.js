@@ -9,10 +9,10 @@ window.addEventListener("scroll", () => {
   const bundleFooterBtmMargin = 48; /* 48px is the height of the bottom margin of the bundle footer element */
 
   const footerHeight = footer.offsetHeight;
-  const footerHeightString = footerHeight.toString() + 'px';
-  
+  const footerHeightString = footerHeight.toString() + "px";
+
   const windowHeight = window.innerHeight;
-  
+
   const body = document.body,
     html = document.documentElement;
 
@@ -46,12 +46,12 @@ window.addEventListener("scroll", () => {
 
 // Toggles Side Nav
 const sideNavToggle = () => {
-    const status = mainNav.getAttribute("data-open");
-    if (status === "false") {
-        mainNav.setAttribute("data-open", "true");
-    } else {
-        mainNav.setAttribute("data-open", "false");
-    }
+  const status = mainNav.getAttribute("data-open");
+  if (status === "false") {
+    mainNav.setAttribute("data-open", "true");
+  } else {
+    mainNav.setAttribute("data-open", "false");
+  }
 };
 
 const hamburger = document.querySelector(".hamburger");
@@ -59,7 +59,6 @@ const exit = document.querySelector(".exit");
 const mainNav = document.querySelector(".main-nav");
 hamburger.addEventListener("click", sideNavToggle);
 exit.addEventListener("click", sideNavToggle);
-
 
 // Highlights Selected Bundle and updates bundle footer info
 const bundles = document.querySelectorAll(".bundle-card");
@@ -100,23 +99,24 @@ const setFooterValues = (size, price, period) => {
   footerPeriod.textContent = period + " Day Bundle";
 };
 
-// Open FAQ question dropdown
-const questions = document.querySelectorAll(".question");
+// Opens any element with dropdown menu
+const hasDropDown = document.querySelectorAll(".question, .dropdown");
 
-questions.forEach((question) => {
-  question.addEventListener("click", () => {
-    toggleOpenStatus(question);
-  });
-});
-
-// Open Nav dropdowns
-const dropdowns = document.querySelectorAll(".dropdown");
-
-dropdowns.forEach((dropdown) => {
+hasDropDown.forEach((dropdown) => {
   dropdown.addEventListener("click", () => {
     toggleOpenStatus(dropdown);
   });
 });
+
+// Toggles open status on elements data attribute
+const toggleOpenStatus = (element) => {
+  const openStatus = element.getAttribute("data-open");
+  if (openStatus === "true") {
+    element.setAttribute("data-open", "false");
+  } else {
+    element.setAttribute("data-open", "true");
+  }
+};
 
 // Updates currency selected
 const currencies = document.querySelectorAll(".currency-option");
@@ -132,16 +132,6 @@ currencies.forEach((currency) => {
     sideNavToggle();
   });
 });
-
-// Toggles open status on elements data attribute
-const toggleOpenStatus = (element) => {
-  const openStatus = element.getAttribute("data-open");
-  if (openStatus === "true") {
-    element.setAttribute("data-open", "false");
-  } else {
-    element.setAttribute("data-open", "true");
-  }
-};
 
 // Updates Currency symbol and price on bundles
 const updateCurrency = (symbol) => {
