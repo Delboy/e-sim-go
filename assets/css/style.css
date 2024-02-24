@@ -33,6 +33,7 @@ h1 {
 
 body {
   font-family: "Poppins", sans-serif;
+  position: relative;
 }
 
 a {
@@ -300,17 +301,15 @@ header a:hover,
 
 .bundle-footer {
   position: fixed;
-  bottom: 0;
+  bottom: 3rem;
   width: 100%;
   padding: 0.5rem 0;
   background-color: white;
-  margin-bottom: 3rem;
   box-shadow: 0 0 5px gray;
 }
 
 .absolute {
-  position: relative !important;
-  margin-bottom: 0;
+  position: absolute !important;
 }
 
 .button {
@@ -402,6 +401,7 @@ footer {
   background-color: rgba(0, 1, 5, 255);
   color: var(--off-white);
   padding-top: 1rem;
+  margin-top: 3rem;
 }
 
 .footer p,

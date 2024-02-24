@@ -9,6 +9,8 @@ window.addEventListener("scroll", () => {
   const bundleFooterBtmMargin = 48; /* 48px is the height of the bottom margin of the bundle footer element */
 
   const footerHeight = footer.offsetHeight;
+  const footerHeightString = footerHeight.toString() + 'px';
+  
   const windowHeight = window.innerHeight;
 
   const body = document.body,
@@ -27,8 +29,10 @@ window.addEventListener("scroll", () => {
     pageHeight - footerHeight + bundleFooterBtmMargin
   ) {
     bundleFooter.classList.add("absolute");
+    bundleFooter.style.bottom = footerHeightString;
   } else {
     bundleFooter.classList.remove("absolute");
+    bundleFooter.style.bottom = "3rem";
   }
 
   if (scroll > 100) {
