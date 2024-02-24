@@ -322,10 +322,39 @@ header a:hover,
 
   background: var(--default-gradient);
   background: var(--gradient);
+  background-position: left;
+  background-size: 150%;
   color: white;
 
   font-size: 1rem;
   cursor: pointer;
+
+  transition: 0.5s;
+  animation: button-animation 0.65s 0.15s ease-out forwards;
+}
+
+.button:hover,
+.button:focus {
+  animation: button-animation-rev 0.65s ease-out forwards;
+  transition: 0.5s;
+}
+
+@keyframes button-animation {
+  0% {
+    background-position: bottom left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+
+@keyframes button-animation-rev {
+  0% {
+    background-position: top right;
+  }
+  100% {
+    background-position: bottom left;
+  }
 }
 
 .button span:first-child {
@@ -578,7 +607,7 @@ footer {
   /********** Bundles **********/
 
   .banner {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .bundles {
@@ -645,7 +674,7 @@ footer {
   /********** Bundles **********/
 
   .banner {
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
 
   /********** Footer **********/
@@ -662,11 +691,9 @@ footer {
     flex-direction: column;
     padding: 1rem 0;
     height: fit-content;
-}
-
-.footer-footer .container ul li {
-    
-    font-size: .6em !important;
   }
 
+  .footer-footer .container ul li {
+    font-size: 0.6em !important;
+  }
 }
